@@ -1,10 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import App from './app/App.tsx'
+import DesignShield from '~components/DesignShield'
+
+import App from './App.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <DesignShield>
+      <App />
+    </DesignShield>
   </React.StrictMode>,
 )
