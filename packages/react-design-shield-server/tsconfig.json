@@ -15,15 +15,13 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
 
     /* Paths */
     "baseUrl": "src",
     "paths": {
       "~types": ["types.ts"],
       "~constants": ["constants.ts"],
+      "~domain/*": ["domain/*"],
       "~queries": ["queries.ts"],
       "~processors/*": ["processors/*"],
       "~components/*": ["components/*"],

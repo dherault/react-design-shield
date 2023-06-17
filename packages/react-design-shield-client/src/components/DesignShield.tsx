@@ -1,3 +1,5 @@
+import '../index.css'
+
 import { ReactNode } from 'react'
 import { Provider as GraphqlProvider } from 'urql'
 

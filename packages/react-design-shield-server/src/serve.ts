@@ -1,12 +1,21 @@
+import path from 'node:path'
+
 import { ApolloServer } from 'apollo-server-express'
 import express from 'express'
 import cors from 'cors'
 import chalk from 'chalk'
 import esMain from 'es-main'
 
+import { setApplicationPath } from '~domain/applicationPath'
+
 import { resolvers, typeDefs } from './graphql'
 
-async function serve() {
+async function serve(applicationRelativePath = '.') {
+  const applicationPath = path.join(process.cwd(), applicationRelativePath)
+
+  setApplicationPath(applicationPath)
+
+  console.log('appPath', applicationPath)
   const server = new ApolloServer({
     typeDefs,
     resolvers,
@@ -31,6 +40,9 @@ async function serve() {
 
 export default serve
 
+// TODO in the future, detect project type to find out the relative path
+const TEMP_APP_RELATIVE_PATH = '../react-design-shield-client'
+
 if (esMain(import.meta)) {
-  serve()
+  serve(TEMP_APP_RELATIVE_PATH)
 }

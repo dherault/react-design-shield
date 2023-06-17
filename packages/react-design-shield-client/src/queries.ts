@@ -3,13 +3,13 @@
 -- */
 
 export const HierarchyQuery = `
-  query {
-    hierarchy
+  query ($input: String!) {
+    hierarchy (input: $input)
   }
 `
 
 export type HierarchyQueryDataType = {
-  hierarchy: boolean
+  hierarchy: string
 }
 
 /* --

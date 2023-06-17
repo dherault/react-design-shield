@@ -25,6 +25,11 @@
             "position": "after"
           },
           {
+            "pattern": "~domain/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
             "pattern": "~queries",
             "group": "internal",
             "position": "after"

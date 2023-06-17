@@ -5,6 +5,12 @@ export type FileType = {
   code: string
 }
 
+export type HierarchyInputType = {
+  tag: string,
+  nodeType: Node['nodeType'],
+  children: HierarchyInputType[],
+}
+
 export type HierarchyType = {
   id: string
   name: string
@@ -28,8 +34,8 @@ export type ExtendedHierarchyContextType = {
 
 export type ExtendedHierarchyType = Omit<HierarchyType, 'children' | 'cursors'> & {
   children: ExtendedHierarchyType[]
-  childrenElements: HTMLElement[]
-  childrenElementsStack: HTMLElement[]
+  childrenInputs: HierarchyInputType[]
+  childrenInputsStack: HierarchyInputType[]
   context: ExtendedHierarchyContextType
 }
 
